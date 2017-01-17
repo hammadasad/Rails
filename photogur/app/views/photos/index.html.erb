@@ -1,0 +1,11 @@
+<h1>Photogur</h1>
+
+<ul>
+  <% @photos.each do |photo| %>
+  
+    <li><%= photo.title %> | <%=photo.artist %> | <%=photo.url %> (<%= link_to "Edit", edit_photo_path(photo) %>)</li>
+
+  <% end %>
+</ul>
+
+<p><a href="/photos/new">New Photo</a></p>

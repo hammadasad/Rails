@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Authentication</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <% if flash.any? %>
+    <% flash.each do |key, value| %>
+      <p>
+        <%= key %> : <%= value %>
+      </p>
+    <% end %>
+  <% end %>
+
+  <% if current_user %>
+    <%= "Logged In User: #{ current_user.email } " %>
+  <% end %>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

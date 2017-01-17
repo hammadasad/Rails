@@ -1,0 +1,8 @@
+Hello World
+file = File.open("log.txt", "r")
+puts file.read
+file.close
+
+File.open("log.txt", "r") do |f|
+	puts f.read
+end
